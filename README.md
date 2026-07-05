@@ -14,13 +14,13 @@ Digital Signal Processing (DSP) solution designed to detect and mitigate high-fr
 - **Target:** 50Hz Fundamental Frequency.
 - **Platform:** MATLAB Signal Processing Toolbox.
 ## Signal Processing Pipeline
-The repository includes `code/cea.m`, which implements a robust signal-conditioning pipeline:
+The repository includes [`code/cea.m`](code/cea.m), which implements a robust signal-conditioning pipeline:
+
 1. **Spectral Analysis:** Uses FFT and Spectrograms to isolate the fundamental 50Hz frequency and locate transient glitches.
 2. **Noise Mitigation:**
     - **IIR Notch Filter:** Removes 150Hz harmonic interference.
     - **Butterworth Bandpass Filter:** Isolates the 50Hz fundamental for precise control.
 3. **Physical Scaling:** Calibrates the digital signal to physical voltage units (Volts RMS) for real-world grid monitoring.
-## Visual Documentation
 
 The following figures illustrate the signal processing pipeline, from raw acquisition to refined signal reconstruction.
 
