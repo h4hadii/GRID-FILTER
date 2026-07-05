@@ -13,8 +13,10 @@ Digital Signal Processing (DSP) solution designed to detect and mitigate high-fr
 - **Analysis:** Fast Fourier Transform (FFT) and Spectrogram generation.
 - **Target:** 50Hz Fundamental Frequency.
 - **Platform:** MATLAB Signal Processing Toolbox.
-## Signal Processing Workflow
-The repository includes a Python implementation (`/code/signal_analysis.py`) demonstrating the grid-conditioning pipeline. The script performs:
-1. **Signal Synthesis:** Generating a 50Hz fundamental with synthetic noise and transient glitches.
-2. **Filtering:** Applying a Butterworth bandpass filter to isolate the 50Hz fundamental frequency.
-3. **Spectral Analysis:** Using FFT to visualize harmonic noise and STFT (Spectrogram) to track time-variant anomalies.
+## Signal Processing Pipeline
+The repository includes `code/cea.m`, which implements a robust signal-conditioning pipeline:
+1. **Spectral Analysis:** Uses FFT and Spectrograms to isolate the fundamental 50Hz frequency and locate transient glitches.
+2. **Noise Mitigation:**
+    - **IIR Notch Filter:** Removes 150Hz harmonic interference.
+    - **Butterworth Bandpass Filter:** Isolates the 50Hz fundamental for precise control.
+3. **Physical Scaling:** Calibrates the digital signal to physical voltage units (Volts RMS) for real-world grid monitoring.
