@@ -20,3 +20,22 @@ The repository includes `code/cea.m`, which implements a robust signal-condition
     - **IIR Notch Filter:** Removes 150Hz harmonic interference.
     - **Butterworth Bandpass Filter:** Isolates the 50Hz fundamental for precise control.
 3. **Physical Scaling:** Calibrates the digital signal to physical voltage units (Volts RMS) for real-world grid monitoring.
+## Visual Documentation
+
+The following figures illustrate the signal processing pipeline, from raw acquisition to refined signal reconstruction.
+
+### 1. Raw Input Signal
+Shows the initial voltage signal with harmonic noise and transient glitches.
+![Raw Signal](images/RAW.jpg)
+
+### 2. Frequency Analysis (FFT)
+The single-sided amplitude spectrum used to identify the fundamental frequency and noise components.
+![Spectrum](images/Spectrum.jpg)
+
+### 3. Time-Frequency Analysis (Spectrogram)
+Used to pinpoint the exact time instant of the transient glitch and harmonic interference.
+![Spectrogram](images/Spectogram.jpg)
+
+### 4. Cleaned Output Signal
+The final waveform after notch and bandpass filtering, scaled to physical voltage (RMS).
+![Clean Signal](images/clean.jpg)
